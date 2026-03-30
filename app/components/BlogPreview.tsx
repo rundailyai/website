@@ -1,4 +1,7 @@
+'use client';
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const recentPosts = [
   {
@@ -30,24 +33,31 @@ const recentPosts = [
 export function BlogPreview() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {recentPosts.map((post) => (
-        <Link
+      {recentPosts.map((post, index) => (
+        <motion.div
           key={post.slug}
-          href={`/blog/${post.slug}`}
-          className="bg-white rounded-lg shadow-sm hover:shadow-md transition p-6 group"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
         >
-          <span className="text-xs text-blue-600 font-semibold uppercase tracking-wide">
-            {post.category}
-          </span>
-          <h3 className="text-xl font-semibold mt-2 mb-2 group-hover:text-blue-600 transition">
-            {post.title}
-          </h3>
-          <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
-          <div className="flex items-center justify-between text-xs text-gray-500">
-            <time>{new Date(post.date).toLocaleDateString()}</time>
-            <span>{post.readTime}</span>
-          </div>
-        </Link>
+          <Link
+            href={`/blog/${post.slug}`}
+            className="block glass rounded-2xl hover:scale-105 transition-all duration-300 p-6 group hover:glow-green"
+          >
+            <span className="text-xs text-green-400 font-semibold uppercase tracking-wide">
+              {post.category}
+            </span>
+            <h3 className="text-xl font-semibold mt-2 mb-2 text-white group-hover:text-green-400 transition">
+              {post.title}
+            </h3>
+            <p className="text-gray-400 text-sm mb-4">{post.excerpt}</p>
+            <div className="flex items-center justify-between text-xs text-gray-500">
+              <time>{new Date(post.date).toLocaleDateString()}</time>
+              <span>{post.readTime}</span>
+            </div>
+          </Link>
+        </motion.div>
       ))}
     </div>
   );

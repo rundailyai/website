@@ -1,4 +1,7 @@
+'use client';
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const freeTools = [
   {
@@ -24,18 +27,25 @@ const freeTools = [
 export function FreeToolsSection() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {freeTools.map((tool) => (
-        <Link
+      {freeTools.map((tool, index) => (
+        <motion.div
           key={tool.href}
-          href={tool.href}
-          className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition group"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
         >
-          <div className="text-4xl mb-3">{tool.icon}</div>
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition">
-            {tool.title}
-          </h3>
-          <p className="text-gray-600 text-sm">{tool.description}</p>
-        </Link>
+          <Link
+            href={tool.href}
+            className="block glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 group hover:glow-purple"
+          >
+            <div className="text-4xl mb-3">{tool.icon}</div>
+            <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-purple-400 transition">
+              {tool.title}
+            </h3>
+            <p className="text-gray-400 text-sm">{tool.description}</p>
+          </Link>
+        </motion.div>
       ))}
     </div>
   );
