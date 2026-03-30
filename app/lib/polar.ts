@@ -14,6 +14,7 @@
 
 // Map internal product IDs to Polar product IDs
 const productIdMap: Record<string, string> = {
+  "digital-planner-bundle": "PENDING_POLAR_SETUP", // TODO: Replace with actual Polar product ID after dashboard setup
   "notion-productivity-templates": "polar_product_id_1",
   "ai-content-calendar": "polar_product_id_2",
   "email-automation-kit": "polar_product_id_3",

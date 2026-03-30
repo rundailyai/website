@@ -14,6 +14,40 @@ export interface Product {
 
 export const products: Product[] = [
   {
+    id: "digital-planner-bundle",
+    title: "Daily AI Planner Bundle — 5 Productivity Templates",
+    description: "Get organized and stay consistent with 5 essential CSV planner templates: daily, weekly, monthly, habit tracker, and goal tracker. Works with Google Sheets, Excel, and all major spreadsheet apps.",
+    longDescription: "Building better habits and achieving your goals starts with a system you can actually stick to. This Digital Planner Bundle gives you five battle-tested templates designed for productivity enthusiasts, solopreneurs, and anyone serious about personal growth.\n\nEach template is delivered as a simple CSV file that opens in Google Sheets, Excel, or any spreadsheet application. No complicated software, no subscriptions—just clean, functional planning tools you can customize to fit your life. The daily planner includes time blocking from 5 AM to 10 PM, priority tracking, gratitude prompts, and reflection questions. The weekly and monthly planners help you zoom out and align your daily actions with bigger goals. The habit tracker gives you a 31-day grid to build consistency, and the goal tracker breaks down quarterly and annual objectives into actionable milestones.\n\nWhether you're a student managing coursework, an entrepreneur juggling multiple projects, or someone who just wants to feel more in control of their time, these templates provide the structure without the overwhelm. Print them, use them digitally, or combine them into one master workbook—it's your system, your way.",
+    price: 19,
+    category: "digital-planners",
+    tags: ["productivity", "planning", "habits", "goals", "spreadsheet", "csv"],
+    featured: true,
+    images: ["/images/products/digital-planner.jpg"], // TODO: Replace with actual image from RUN-22
+    faq: [
+      {
+        question: "What format are these templates in?",
+        answer: "All five planners are delivered as CSV files, which work seamlessly with Google Sheets, Microsoft Excel, Apple Numbers, LibreOffice, and virtually any spreadsheet application.",
+      },
+      {
+        question: "Can I customize the templates?",
+        answer: "Absolutely! These are fully editable spreadsheets. Add columns, change colors, adjust time blocks—make them work for your unique workflow.",
+      },
+      {
+        question: "Do I need any special software?",
+        answer: "Nope. If you can open a spreadsheet, you're good to go. Google Sheets is free and works great with these templates.",
+      },
+      {
+        question: "Can I print these planners?",
+        answer: "Yes! They're designed to work both digitally and as printable planning sheets. Print daily pages as needed or use them entirely on your device.",
+      },
+      {
+        question: "Will I get updates or new templates?",
+        answer: "This is a one-time purchase of five core templates. We may release additional planning tools in the future, which would be separate products.",
+      },
+    ],
+    relatedProducts: ["notion-productivity-templates", "ai-content-calendar"],
+  },
+  {
     id: "notion-productivity-templates",
     title: "Notion Productivity Templates",
     description: "Complete productivity system with 50+ templates for task management, goals, and habit tracking.",
