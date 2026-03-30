@@ -1,0 +1,282 @@
+/* Professional PDF Styling for Cold Email Template Library */
+
+@page {
+  size: letter;
+  margin: 0.75in 0.75in 1in 0.75in;
+
+  @top-right {
+    content: "Cold Email Template Library | Page " counter(page);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 9pt;
+    color: #64748b;
+  }
+
+  @bottom-center {
+    content: "RunDailyAI.com | $39";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 8pt;
+    color: #94a3b8;
+  }
+}
+
+/* Base Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #1e293b;
+  max-width: 100%;
+}
+
+/* Headings */
+h1 {
+  font-size: 28pt;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 20pt;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.25em;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 16pt;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 13pt;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  page-break-after: avoid;
+}
+
+/* Links */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0.75em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.4em 0;
+}
+
+/* Code and Pre */
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10pt;
+  background-color: #f1f5f9;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #dc2626;
+}
+
+pre {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1em 0;
+  page-break-inside: avoid;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #334155;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #3b82f6;
+  background-color: #f8fafc;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  font-style: italic;
+  color: #475569;
+  page-break-inside: avoid;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 10pt;
+  page-break-inside: avoid;
+}
+
+th {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75em;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75em;
+}
+
+tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Horizontal Rules */
+hr {
+  border: none;
+  border-top: 2px solid #e2e8f0;
+  margin: 2em 0;
+}
+
+/* Special Boxes */
+.info-box {
+  background-color: #dbeafe;
+  border-left: 4px solid #3b82f6;
+  padding: 1em;
+  margin: 1em 0;
+  page-break-inside: avoid;
+}
+
+.warning-box {
+  background-color: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 1em;
+  margin: 1em 0;
+  page-break-inside: avoid;
+}
+
+/* Page Breaks */
+.page-break {
+  page-break-after: always;
+}
+
+/* Email Template Sections */
+.email-template {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1.25em;
+  margin: 1.5em 0;
+  page-break-inside: avoid;
+}
+
+.email-template h4 {
+  color: #3b82f6;
+  margin-top: 0;
+}
+
+/* Table of Contents */
+.toc {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 2em 0;
+  page-break-inside: avoid;
+}
+
+.toc h2 {
+  border-bottom: none;
+  margin-top: 0;
+}
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.5em 0;
+  padding-left: 1em;
+}
+
+/* Paragraphs */
+p {
+  margin: 0.75em 0;
+  text-align: justify;
+}
+
+/* Strong and Emphasis */
+strong {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+em {
+  font-style: italic;
+  color: #475569;
+}
+
+/* Cover Page (if needed) */
+.cover {
+  text-align: center;
+  page-break-after: always;
+}
+
+.cover h1 {
+  font-size: 36pt;
+  margin-top: 3in;
+  margin-bottom: 0.25em;
+}
+
+.cover p {
+  font-size: 14pt;
+  color: #64748b;
+  margin: 0.5em 0;
+}
+
+/* Print-specific adjustments */
+@media print {
+  body {
+    font-size: 11pt;
+  }
+
+  a {
+    color: #1e40af;
+    text-decoration: none;
+  }
+
+  /* Avoid breaking inside important elements */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  ul, ol, blockquote, pre, table {
+    page-break-inside: avoid;
+  }
+
+  /* Keep email templates together */
+  .email-template {
+    page-break-inside: avoid;
+  }
+}
