@@ -1,34 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-
-const featuredProducts = [
-  {
-    id: "notion-productivity-templates",
-    title: "Notion Productivity Templates",
-    description: "Complete productivity system with 50+ templates for task management, goals, and habit tracking.",
-    price: 29,
-    image: "/images/products/notion-templates.jpg",
-    category: "Templates",
-  },
-  {
-    id: "ai-content-calendar",
-    title: "AI Content Calendar",
-    description: "Generate a month of content ideas with AI. Perfect for social media managers and creators.",
-    price: 19,
-    image: "/images/products/content-calendar.jpg",
-    category: "Tools",
-  },
-  {
-    id: "email-automation-kit",
-    title: "Email Automation Kit",
-    description: "Pre-built email sequences and templates for onboarding, nurture, and sales campaigns.",
-    price: 39,
-    image: "/images/products/email-kit.jpg",
-    category: "Templates",
-  },
-];
+import { getFeaturedProducts } from "@/app/lib/products";
 
 export function FeaturedProducts() {
+  const featuredProducts = getFeaturedProducts();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {featuredProducts.map((product) => (
@@ -52,7 +28,7 @@ export function FeaturedProducts() {
             <h3 className="text-xl font-semibold mt-2 mb-2 group-hover:text-blue-600 transition">
               {product.title}
             </h3>
-            <p className="text-gray-600 text-sm mb-4">{product.description}</p>
+            <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
             <div className="flex items-center justify-between">
               <span className="text-2xl font-bold text-blue-600">${product.price}</span>
               <span className="text-blue-600 group-hover:translate-x-1 transition inline-block">
