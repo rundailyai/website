@@ -14,6 +14,44 @@ export interface Product {
 
 export const products: Product[] = [
   {
+    id: "cold-email-template-library",
+    title: "Cold Email Templates: 55+ Proven B2B Sequences for Sales & Partnerships",
+    description: "Stop starting from scratch every time you need to send a cold email. Get 55+ battle-tested email templates organized by industry and use case, plus a proven personalization framework that turns 1% response rates into 10-15%.",
+    longDescription: "Cold email is still one of the highest-ROI ways to book meetings, get demos, and build partnerships—but only if you know what actually works.\n\nThe Cold Email Template Library gives you 55+ proven email templates used by sales teams, agencies, and B2B service providers to consistently book meetings and close deals. Every template includes subject lines that get opened, proven email bodies with timing guidance, personalization checkpoints, expected response rates, and A/B testing variations.\n\nYou get 9 complete email sequences (45 templates total) covering SaaS, Agency, and B2B Services industries. Each sequence includes 5 emails sent over 30 days with specific timing for meeting bookings, demo requests, and partnership outreach. Plus 10 bonus trigger-based templates for re-engaging cold leads, event invitations, content sharing, mutual connections, competitor switching, job postings, funding announcements, and more.\n\nThe included 5-Minute Research Framework shows exactly what to research, where to find it, and how to use it to turn generic templates into custom messages that feel personally written. Stop agonizing over what to say and start booking meetings with templates that consistently deliver 8-15% response rates.",
+    price: 39,
+    category: "email-marketing",
+    tags: ["email", "cold-email", "templates", "sales", "b2b", "outreach", "sequences"],
+    featured: true,
+    images: ["/images/products/cold-email-templates.jpg"],
+    faq: [
+      {
+        question: "What industries are these templates for?",
+        answer: "Templates are organized for SaaS companies, agencies, and B2B service providers. Each template can be adapted to your specific industry using the included personalization framework.",
+      },
+      {
+        question: "How many templates are included?",
+        answer: "55+ email templates total: 9 complete 5-email sequences (45 templates) plus 10 bonus trigger-based templates for special situations.",
+      },
+      {
+        question: "What's included besides the templates?",
+        answer: "You get a complete personalization framework, the 5-Minute Research Method, template selection guide, Notion CSV database for easy management, benchmarks, and best practices.",
+      },
+      {
+        question: "Can I customize these templates?",
+        answer: "Absolutely! Every template is fully editable. The personalization framework teaches you exactly how to adapt each template to your specific prospects and situations.",
+      },
+      {
+        question: "What response rates can I expect?",
+        answer: "Using the templates with proper personalization, you can expect 8-15% response rates vs. the industry average of 1-3%. Actual results depend on your list quality and personalization effort.",
+      },
+      {
+        question: "What format are the templates delivered in?",
+        answer: "Templates are delivered as a comprehensive PDF guide plus a Notion CSV file that you can import directly into Notion or any spreadsheet application.",
+      },
+    ],
+    relatedProducts: ["email-automation-kit", "ai-content-calendar", "digital-planner-bundle"],
+  },
+  {
     id: "digital-planner-bundle",
     title: "Daily AI Planner Bundle — 5 Productivity Templates",
     description: "Get organized and stay consistent with 5 essential CSV planner templates: daily, weekly, monthly, habit tracker, and goal tracker. Works with Google Sheets, Excel, and all major spreadsheet apps.",
@@ -22,7 +60,12 @@ export const products: Product[] = [
     category: "digital-planners",
     tags: ["productivity", "planning", "habits", "goals", "spreadsheet", "csv"],
     featured: true,
-    images: ["/images/products/digital-planner.jpg"], // TODO: Replace with actual image from RUN-22
+    images: [
+      "/images/products/digital-planner-thumbnail.png",
+      "/images/products/digital-planner-daily.png",
+      "/images/products/digital-planner-habits.png",
+      "/images/products/digital-planner-goals.png",
+    ],
     faq: [
       {
         question: "What format are these templates in?",
