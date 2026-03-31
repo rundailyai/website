@@ -17,6 +17,8 @@ import { Hero3D } from "./components/Hero3D";
 import { Loading } from "./components/ui/Loading";
 import { Cursor } from "./components/ui/Cursor";
 import { SmoothScroll } from "./components/SmoothScroll";
+import { ScrollAnimations } from "./components/animations/ScrollAnimations";
+import { ScrollProgress } from "./components/ui/ScrollProgress";
 
 
 
@@ -34,6 +36,12 @@ export default function HomePage() {
       {/* Smooth Scroll */}
       {!isLoading && <SmoothScroll />}
 
+      {/* Scroll Animations */}
+      {!isLoading && <ScrollAnimations />}
+
+      {/* Scroll Progress */}
+      {!isLoading && <ScrollProgress />}
+
       <div className="flex flex-col bg-[#0A0E27]">
         <GrainTexture />
 
@@ -44,154 +52,93 @@ export default function HomePage() {
       <SocialProofBar />
 
       {/* Featured Products */}
-      <motion.section
+      <section
         id="products"
-        className="py-20 px-4 relative"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        className="py-20 px-4 relative scroll-animate"
       >
         <div className="container mx-auto max-w-6xl">
-          <motion.h2
-            className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent scroll-heading">
             Featured Products
-          </motion.h2>
-          <FeaturedProducts />
+          </h2>
+          <div className="scroll-stagger">
+            <FeaturedProducts />
+          </div>
         </div>
-      </motion.section>
+      </section>
 
 
       {/* Categories */}
-      <motion.section
-        className="py-20 px-4 relative"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+      <section className="py-20 px-4 relative scroll-animate">
         <div className="container mx-auto max-w-6xl">
-          <motion.h2
-            className="text-4xl font-bold mb-12 text-center text-white"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-4xl font-bold mb-12 text-center text-white scroll-heading">
             Browse by Category
-          </motion.h2>
-          <Categories />
+          </h2>
+          <div className="scroll-stagger">
+            <Categories />
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* How It Works */}
-      <motion.section
-        className="py-20 px-4 relative"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+      <section className="py-20 px-4 relative scroll-animate">
         <div className="container mx-auto max-w-6xl">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-16 text-center text-white"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-white scroll-heading">
             How It Works
-          </motion.h2>
-          <HowItWorks />
+          </h2>
+          <div className="scroll-stagger">
+            <HowItWorks />
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Free Tools */}
-      <motion.section
-        className="py-20 px-4 relative overflow-hidden"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20" />
+      <section className="py-20 px-4 relative overflow-hidden scroll-animate">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-blue-900/20 parallax" />
         <div className="container mx-auto max-w-6xl relative z-10">
-          <motion.h2
-            className="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <h2 className="text-4xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent scroll-heading">
             Free Tools
-          </motion.h2>
-          <motion.p
-            className="text-center text-gray-400 mb-12 text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
+          </h2>
+          <p className="text-center text-gray-400 mb-12 text-lg">
             Try our free tools - no signup required
-          </motion.p>
-          <FreeToolsSection />
+          </p>
+          <div className="scroll-stagger">
+            <FreeToolsSection />
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Built Different - AI Agent Team */}
-      <motion.section
-        className="py-20 px-4 relative overflow-hidden"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900" />
+      <section className="py-20 px-4 relative overflow-hidden scroll-animate">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 parallax" />
         <div className="container mx-auto max-w-6xl relative z-10">
           <BuiltDifferent />
         </div>
-      </motion.section>
+      </section>
 
       {/* Email Signup */}
-      <motion.section
-        className="py-20 px-4 relative overflow-hidden"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30" />
+      <section className="py-20 px-4 relative overflow-hidden scroll-animate">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30 parallax" />
         <div className="container mx-auto max-w-2xl text-center relative z-10">
           <EmailSignup />
         </div>
-      </motion.section>
+      </section>
 
       {/* Blog Preview */}
-      <motion.section
-        className="py-20 px-4 relative"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+      <section className="py-20 px-4 relative scroll-animate">
         <div className="container mx-auto max-w-6xl">
           <div className="flex justify-between items-center mb-12">
-            <motion.h2
-              className="text-4xl font-bold text-white"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            <h2 className="text-4xl font-bold text-white scroll-heading">
               Latest from the Blog
-            </motion.h2>
+            </h2>
             <Link href="/blog" className="text-blue-400 hover:text-blue-300 transition-colors">
               View all posts →
             </Link>
           </div>
-          <BlogPreview />
+          <div className="scroll-stagger">
+            <BlogPreview />
+          </div>
         </div>
-      </motion.section>
+      </section>
     </div>
     </>
   );
