@@ -19,7 +19,19 @@ export function FeaturedProducts() {
         >
           <Link
             href={`/products/${product.id}`}
-            className="block glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 group hover:glow"
+            className="block glass rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 group glow-hover"
+            style={{
+              transformStyle: 'preserve-3d',
+              perspective: '1000px',
+            }}
+            onMouseEnter={(e) => {
+              const card = e.currentTarget;
+              card.style.transform = 'rotateY(3deg) rotateX(-3deg) scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              const card = e.currentTarget;
+              card.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+            }}
           >
             <div className="relative h-48 bg-gradient-to-br from-blue-900/50 to-purple-900/50">
               {/* Placeholder for product image */}

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { FeaturedProducts } from "./components/FeaturedProducts";
 import { Categories } from "./components/Categories";
@@ -13,6 +14,17 @@ import { GrainTexture } from "./components/GrainTexture";
 import { SocialProofBar } from "./components/SocialProofBar";
 import { HowItWorks } from "./components/HowItWorks";
 import { BuiltDifferent } from "./components/BuiltDifferent";
+
+// Lazy load heavy 3D components
+const ParticleField = dynamic(() => import('./components/ParticleField').then(mod => ({ default: mod.ParticleField })), {
+  ssr: false,
+  loading: () => null,
+});
+
+const ProductDemo3D = dynamic(() => import('./components/ProductDemo3D').then(mod => ({ default: mod.ProductDemo3D })), {
+  ssr: false,
+  loading: () => <div className="h-[500px]" />,
+});
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -30,11 +42,12 @@ const staggerChildren = {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col bg-gradient-to-b from-slate-900 via-slate-800 to-gray-900">
+    <div className="flex flex-col bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+      <ParticleField />
       <GrainTexture />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-4 py-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
         <Hero3DBackground />
         <FloatingOrbs />
 
@@ -45,17 +58,19 @@ export default function HomePage() {
           variants={staggerChildren}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent"
+            className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight"
+            style={{ textShadow: '0 0 40px rgba(255, 255, 255, 0.1)' }}
             variants={fadeInUp}
           >
             AI tools that actually save you time
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
+            style={{ color: 'rgb(148, 163, 184)' }}
             variants={fadeInUp}
           >
-            Digital products built by AI agents, tested by humans, used by thousands
+            Digital products built by AI, reviewed by humans
           </motion.p>
 
           <motion.div
@@ -64,15 +79,27 @@ export default function HomePage() {
           >
             <Link
               href="/products"
-              className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 glow overflow-hidden"
+              className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 overflow-hidden"
+              style={{
+                boxShadow: '0 0 30px rgba(59, 130, 246, 0.3)',
+              }}
             >
               <span className="relative z-10">Browse Products</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  boxShadow: '0 0 40px rgba(139, 92, 246, 0.4)',
+                }}
+              />
             </Link>
 
             <Link
               href="/free-tools"
-              className="glass text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:border-white"
+              style={{
+                border: '2px solid rgb(71, 85, 105)',
+                color: 'white',
+              }}
             >
               Try Free Tools
             </Link>
@@ -103,6 +130,9 @@ export default function HomePage() {
           <FeaturedProducts />
         </div>
       </motion.section>
+
+      {/* 3D Product Demo */}
+      <ProductDemo3D />
 
       {/* Categories */}
       <motion.section

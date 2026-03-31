@@ -1,18 +1,28 @@
+'use client';
+
 import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="relative bg-slate-950 text-gray-300 py-16 px-4 border-t border-white/10">
+    <footer
+      className="relative py-16 px-4 border-t"
+      style={{
+        background: '#050508',
+        borderImage: 'linear-gradient(90deg, #3B82F6, #8B5CF6, #3B82F6) 1',
+        borderTop: '1px solid transparent',
+        color: 'rgb(148, 163, 184)',
+      }}
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Products */}
           <div>
             <h4 className="text-white font-semibold mb-4">Products</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/products" className="hover:text-blue-400 transition">Browse All</Link></li>
-              <li><Link href="/products?category=notion" className="hover:text-blue-400 transition">Notion Templates</Link></li>
-              <li><Link href="/products?category=tools" className="hover:text-blue-400 transition">Web Tools</Link></li>
-              <li><Link href="/products?category=printables" className="hover:text-blue-400 transition">Printables</Link></li>
+              <li><Link href="/products" className="hover:text-white transition">Browse All</Link></li>
+              <li><Link href="/products?category=notion" className="hover:text-white transition">Notion Templates</Link></li>
+              <li><Link href="/products?category=tools" className="hover:text-white transition">Web Tools</Link></li>
+              <li><Link href="/products?category=printables" className="hover:text-white transition">Printables</Link></li>
             </ul>
           </div>
 
@@ -20,10 +30,10 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Free Tools</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/free-tools" className="hover:text-purple-400 transition">All Free Tools</Link></li>
-              <li><Link href="/free-tools/word-counter" className="hover:text-purple-400 transition">Word Counter</Link></li>
-              <li><Link href="/free-tools/json-formatter" className="hover:text-purple-400 transition">JSON Formatter</Link></li>
-              <li><Link href="/free-tools/color-palette" className="hover:text-purple-400 transition">Color Palette Generator</Link></li>
+              <li><Link href="/free-tools" className="hover:text-white transition">All Free Tools</Link></li>
+              <li><Link href="/free-tools/word-counter" className="hover:text-white transition">Word Counter</Link></li>
+              <li><Link href="/free-tools/json-formatter" className="hover:text-white transition">JSON Formatter</Link></li>
+              <li><Link href="/free-tools/color-palette" className="hover:text-white transition">Color Palette Generator</Link></li>
             </ul>
           </div>
 
@@ -31,10 +41,10 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/about" className="hover:text-green-400 transition">About Us</Link></li>
-              <li><Link href="/blog" className="hover:text-green-400 transition">Blog</Link></li>
-              <li><Link href="/support" className="hover:text-green-400 transition">Support</Link></li>
-              <li><Link href="/support" className="hover:text-green-400 transition">Contact</Link></li>
+              <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+              <li><Link href="/blog" className="hover:text-white transition">Blog</Link></li>
+              <li><Link href="/support" className="hover:text-white transition">Support</Link></li>
+              <li><Link href="/support" className="hover:text-white transition">Contact</Link></li>
             </ul>
           </div>
 
@@ -42,16 +52,30 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/privacy" className="hover:text-blue-400 transition">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-blue-400 transition">Terms of Service</Link></li>
-              <li><Link href="/refunds" className="hover:text-blue-400 transition">Refund Policy</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-white transition">Terms of Service</Link></li>
+              <li><Link href="/refunds" className="hover:text-white transition">Refund Policy</Link></li>
             </ul>
 
             {/* Social Media */}
             <div className="mt-6">
               <h5 className="text-white font-semibold mb-3 text-sm">Follow Us</h5>
               <div className="flex gap-3">
-                <a href="https://twitter.com/rundailyai" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+                <a
+                  href="https://twitter.com/rundailyai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all hover:shadow-lg"
+                  style={{
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 0 15px rgba(59, 130, 246, 0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
@@ -71,9 +95,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p className="text-gray-500">&copy; {new Date().getFullYear()} RunDailyAI. All rights reserved.</p>
-          <p className="text-gray-500 italic">Made with AI, reviewed by humans</p>
+        <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm" style={{ borderColor: 'rgba(148, 163, 184, 0.1)' }}>
+          <p style={{ color: 'rgb(71, 85, 105)' }}>&copy; {new Date().getFullYear()} RunDailyAI. All rights reserved.</p>
+          <p className="italic text-center" style={{ color: 'rgb(71, 85, 105)' }}>Made with AI, reviewed by humans</p>
         </div>
       </div>
     </footer>
