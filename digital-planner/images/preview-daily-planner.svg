@@ -1,0 +1,141 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8fafc"/>
+
+  <!-- Google Sheets interface mockup -->
+  <!-- Toolbar -->
+  <rect x="50" y="50" width="1100" height="50" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="70" y="82" font-family="Arial, sans-serif" font-size="16" fill="#1e293b">File  Edit  View  Insert  Format  Data  Tools  Extensions  Help</text>
+  <rect x="1070" y="62" width="60" height="26" rx="4" fill="#1e88e5"/>
+  <text x="1100" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">Share</text>
+
+  <!-- Sheet title area -->
+  <rect x="50" y="110" width="1100" height="60" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="70" y="150" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0f172a">Daily Planner - March 30, 2026</text>
+
+  <!-- Main spreadsheet -->
+  <rect x="50" y="180" width="1100" height="570" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Column headers -->
+  <rect x="50" y="180" width="1100" height="40" fill="#f1f5f9"/>
+  <line x1="50" y1="220" x2="1150" y2="220" stroke="#cbd5e1" stroke-width="1"/>
+
+  <text x="90" y="207" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#475569">Time</text>
+  <line x1="180" y1="180" x2="180" y2="750" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="290" y="207" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#475569">Task</text>
+  <line x1="520" y1="180" x2="520" y2="750" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="620" y="207" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#475569">Category</text>
+  <line x1="750" y1="180" x2="750" y2="750" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="830" y="207" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#475569">Priority</text>
+  <line x1="930" y1="180" x2="930" y2="750" stroke="#e2e8f0" stroke-width="1"/>
+
+  <text x="1010" y="207" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#475569">Status</text>
+
+  <!-- Data rows -->
+  <!-- Row 1 -->
+  <line x1="50" y1="260" x2="1150" y2="260" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="247" font-family="monospace" font-size="13" fill="#1e293b">07:00</text>
+  <text x="200" y="247" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Morning workout & meditation</text>
+  <rect x="540" y="231" width="80" height="22" rx="4" fill="#dbeafe"/>
+  <text x="580" y="247" font-family="Arial, sans-serif" font-size="12" fill="#0369a1" text-anchor="middle">Health</text>
+  <text x="770" y="247" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Medium</text>
+  <circle cx="980" cy="242" r="10" fill="#10b981"/>
+  <text x="1010" y="247" font-family="Arial, sans-serif" font-size="12" fill="#059669">Done</text>
+
+  <!-- Row 2 -->
+  <line x1="50" y1="300" x2="1150" y2="300" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="287" font-family="monospace" font-size="13" fill="#1e293b">08:00</text>
+  <text x="200" y="287" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Review goals & priorities for the day</text>
+  <rect x="540" y="271" width="80" height="22" rx="4" fill="#fef3c7"/>
+  <text x="580" y="287" font-family="Arial, sans-serif" font-size="12" fill="#d97706" text-anchor="middle">Planning</text>
+  <text x="770" y="287" font-family="Arial, sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">High</text>
+  <circle cx="980" cy="282" r="10" fill="#10b981"/>
+  <text x="1010" y="287" font-family="Arial, sans-serif" font-size="12" fill="#059669">Done</text>
+
+  <!-- Row 3 -->
+  <line x1="50" y1="340" x2="1150" y2="340" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="327" font-family="monospace" font-size="13" fill="#1e293b">09:00</text>
+  <text x="200" y="327" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Client meeting: Q1 strategy review</text>
+  <rect x="540" y="311" width="80" height="22" rx="4" fill="#ddd6fe"/>
+  <text x="580" y="327" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle">Meetings</text>
+  <text x="770" y="327" font-family="Arial, sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">High</text>
+  <circle cx="980" cy="322" r="10" fill="#f59e0b"/>
+  <text x="1015" y="327" font-family="Arial, sans-serif" font-size="12" fill="#d97706">In Progress</text>
+
+  <!-- Row 4 -->
+  <line x1="50" y1="380" x2="1150" y2="380" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="367" font-family="monospace" font-size="13" fill="#1e293b">10:30</text>
+  <text x="200" y="367" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Deep work: Product feature development</text>
+  <rect x="540" y="351" width="80" height="22" rx="4" fill="#fce7f3"/>
+  <text x="580" y="367" font-family="Arial, sans-serif" font-size="12" fill="#db2777" text-anchor="middle">Dev</text>
+  <text x="770" y="367" font-family="Arial, sans-serif" font-size="13" fill="#dc2626" text-anchor="middle">High</text>
+  <circle cx="980" cy="362" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <text x="1010" y="367" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Todo</text>
+
+  <!-- Row 5 -->
+  <line x1="50" y1="420" x2="1150" y2="420" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="407" font-family="monospace" font-size="13" fill="#1e293b">12:00</text>
+  <text x="200" y="407" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Lunch break</text>
+  <rect x="540" y="391" width="80" height="22" rx="4" fill="#dbeafe"/>
+  <text x="580" y="407" font-family="Arial, sans-serif" font-size="12" fill="#0369a1" text-anchor="middle">Personal</text>
+  <text x="770" y="407" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Low</text>
+  <circle cx="980" cy="402" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Row 6 -->
+  <line x1="50" y1="460" x2="1150" y2="460" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="447" font-family="monospace" font-size="13" fill="#1e293b">13:00</text>
+  <text x="200" y="447" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Team sync: Sprint planning</text>
+  <rect x="540" y="431" width="80" height="22" rx="4" fill="#ddd6fe"/>
+  <text x="580" y="447" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed" text-anchor="middle">Meetings</text>
+  <text x="770" y="447" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Medium</text>
+  <circle cx="980" cy="442" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Row 7 -->
+  <line x1="50" y1="500" x2="1150" y2="500" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="487" font-family="monospace" font-size="13" fill="#1e293b">14:00</text>
+  <text x="200" y="487" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Marketing content review & feedback</text>
+  <rect x="540" y="471" width="80" height="22" rx="4" fill="#dcfce7"/>
+  <text x="580" y="487" font-family="Arial, sans-serif" font-size="12" fill="#16a34a" text-anchor="middle">Marketing</text>
+  <text x="770" y="487" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Medium</text>
+  <circle cx="980" cy="482" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Row 8 -->
+  <line x1="50" y1="540" x2="1150" y2="540" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="527" font-family="monospace" font-size="13" fill="#1e293b">15:00</text>
+  <text x="200" y="527" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Customer support tickets & email</text>
+  <rect x="540" y="511" width="80" height="22" rx="4" fill="#fef3c7"/>
+  <text x="580" y="527" font-family="Arial, sans-serif" font-size="12" fill="#d97706" text-anchor="middle">Support</text>
+  <text x="770" y="527" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Low</text>
+  <circle cx="980" cy="522" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Row 9 -->
+  <line x1="50" y1="580" x2="1150" y2="580" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="567" font-family="monospace" font-size="13" fill="#1e293b">16:00</text>
+  <text x="200" y="567" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Admin: expenses, invoices, scheduling</text>
+  <rect x="540" y="551" width="80" height="22" rx="4" fill="#e2e8f0"/>
+  <text x="580" y="567" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Admin</text>
+  <text x="770" y="567" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Low</text>
+  <circle cx="980" cy="562" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Row 10 -->
+  <line x1="50" y1="620" x2="1150" y2="620" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="70" y="607" font-family="monospace" font-size="13" fill="#1e293b">17:00</text>
+  <text x="200" y="607" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Wrap up day & plan tomorrow</text>
+  <rect x="540" y="591" width="80" height="22" rx="4" fill="#fef3c7"/>
+  <text x="580" y="607" font-family="Arial, sans-serif" font-size="12" fill="#d97706" text-anchor="middle">Planning</text>
+  <text x="770" y="607" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Medium</text>
+  <circle cx="980" cy="602" r="10" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Summary stats -->
+  <rect x="50" y="660" width="1100" height="90" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="100" y="700" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f172a">Today's Summary</text>
+  <rect x="320" y="680" width="180" height="40" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+  <text x="410" y="707" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#166534" text-anchor="middle">2 Completed</text>
+  <rect x="530" y="680" width="180" height="40" rx="8" fill="#fef3c7" stroke="#fde047" stroke-width="2"/>
+  <text x="620" y="707" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#854d0e" text-anchor="middle">1 In Progress</text>
+  <rect x="740" y="680" width="180" height="40" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="830" y="707" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#475569" text-anchor="middle">7 Remaining</text>
+</svg>

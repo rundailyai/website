@@ -1,0 +1,134 @@
+
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="toolbarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <filter id="cardShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+      <feOffset dx="0" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="#f3f4f6"/>
+
+  <g transform="translate(100, 100)" filter="url(#cardShadow)">
+    <rect width="1000" height="600" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+
+    <rect width="1000" height="60" rx="12" fill="url(#toolbarGradient)"/>
+    <rect y="12" width="1000" height="48" fill="url(#toolbarGradient)"/>
+    <text x="24" y="42" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="white">
+      Goal Tracker - Q1 2026
+    </text>
+
+    <g transform="translate(24, 84)">
+      <!-- Section Header -->
+      <rect width="952" height="45" fill="rgba(37, 99, 235, 0.08)" rx="4"/>
+      <text x="12" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2937">
+        Quarterly Goals
+      </text>
+
+      <!-- Table Header -->
+      <g transform="translate(0, 55)">
+        <rect width="952" height="35" fill="#f3f4f6"/>
+        <text x="12" y="22" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">Goal</text>
+        <text x="500" y="22" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">Progress</text>
+        <text x="750" y="22" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f2937">Status</text>
+        <line x1="0" y1="35" x2="952" y2="35" stroke="#d1d5db" stroke-width="2"/>
+      </g>
+
+      <!-- Goal 1 -->
+      <g transform="translate(0, 90)">
+        <text x="12" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2937">
+          Launch Digital Product Line
+        </text>
+        <rect x="500" y="15" width="200" height="20" rx="10" fill="#e5e7eb"/>
+        <rect x="500" y="15" width="150" height="20" rx="10" fill="url(#progressGradient)"/>
+        <text x="600" y="29" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">
+          75%
+        </text>
+        <text x="750" y="30" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">
+          On Track
+        </text>
+        <line x1="0" y1="45" x2="952" y2="45" stroke="#e5e7eb" stroke-width="1"/>
+      </g>
+
+      <!-- Goal 2 -->
+      <g transform="translate(0, 135)">
+        <text x="12" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2937">
+          Grow Email List to 1,000 Subscribers
+        </text>
+        <rect x="500" y="15" width="200" height="20" rx="10" fill="#e5e7eb"/>
+        <rect x="500" y="15" width="120" height="20" rx="10" fill="url(#progressGradient)"/>
+        <text x="560" y="29" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">
+          60%
+        </text>
+        <text x="750" y="30" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">
+          On Track
+        </text>
+        <line x1="0" y1="45" x2="952" y2="45" stroke="#e5e7eb" stroke-width="1"/>
+      </g>
+
+      <!-- Goal 3 -->
+      <g transform="translate(0, 180)">
+        <text x="12" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2937">
+          Generate $10K in Revenue
+        </text>
+        <rect x="500" y="15" width="200" height="20" rx="10" fill="#e5e7eb"/>
+        <rect x="500" y="15" width="90" height="20" rx="10" fill="url(#progressGradient)"/>
+        <text x="545" y="29" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">
+          45%
+        </text>
+        <text x="750" y="30" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">
+          On Track
+        </text>
+        <line x1="0" y1="45" x2="952" y2="45" stroke="#e5e7eb" stroke-width="1"/>
+      </g>
+
+      <!-- Milestones Section -->
+      <g transform="translate(0, 250)">
+        <rect width="952" height="45" fill="rgba(37, 99, 235, 0.08)" rx="4"/>
+        <text x="12" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1f2937">
+          Key Milestones
+        </text>
+      </g>
+
+      <g transform="translate(0, 305)">
+        <text x="12" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2937">
+          [Done] Complete website redesign
+        </text>
+        <text x="12" y="45" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">
+          Completed - March 15
+        </text>
+        <line x1="0" y1="55" x2="952" y2="55" stroke="#e5e7eb" stroke-width="1"/>
+
+        <text x="12" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2937">
+          [In Progress] Launch first digital product
+        </text>
+        <text x="12" y="100" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">
+          In Progress - Due March 31
+        </text>
+        <line x1="0" y1="110" x2="952" y2="110" stroke="#e5e7eb" stroke-width="1"/>
+
+        <text x="12" y="135" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#1f2937">
+          [Done] Create 30-day content calendar
+        </text>
+        <text x="12" y="155" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">
+          Completed - March 20
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
