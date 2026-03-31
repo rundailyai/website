@@ -166,3 +166,41 @@ body {
     }
   }
 }
+
+  /* Hero 3D Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-fade-in-up.delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .animate-fade-in-up.delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .animate-fade-in-up.delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

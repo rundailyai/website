@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
@@ -8,110 +9,43 @@ import { Categories } from "./components/Categories";
 import { FreeToolsSection } from "./components/FreeToolsSection";
 import { EmailSignup } from "./components/EmailSignup";
 import { BlogPreview } from "./components/BlogPreview";
-import { Hero3DBackground } from "./components/Hero3DBackground";
-import { FloatingOrbs } from "./components/FloatingOrbs";
 import { GrainTexture } from "./components/GrainTexture";
 import { SocialProofBar } from "./components/SocialProofBar";
 import { HowItWorks } from "./components/HowItWorks";
 import { BuiltDifferent } from "./components/BuiltDifferent";
+import { Hero3D } from "./components/Hero3D";
+import { Loading } from "./components/ui/Loading";
+import { Cursor } from "./components/ui/Cursor";
+import { SmoothScroll } from "./components/SmoothScroll";
 
-// Lazy load heavy 3D components
-const ParticleField = dynamic(() => import('./components/ParticleField').then(mod => ({ default: mod.ParticleField })), {
-  ssr: false,
-  loading: () => null,
-});
 
-const ProductDemo3D = dynamic(() => import('./components/ProductDemo3D').then(mod => ({ default: mod.ProductDemo3D })), {
-  ssr: false,
-  loading: () => <div className="h-[500px]" />,
-});
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
-
-const staggerChildren = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
 
 export default function HomePage() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div className="flex flex-col bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <ParticleField />
-      <GrainTexture />
+    <>
+      {/* Loading Screen */}
+      {isLoading && <Loading onComplete={() => setIsLoading(false)} />}
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-        <Hero3DBackground />
-        <FloatingOrbs />
+      {/* Custom Cursor */}
+      {!isLoading && <Cursor />}
 
-        <motion.div
-          className="container mx-auto max-w-6xl text-center relative z-10"
-          initial="initial"
-          animate="animate"
-          variants={staggerChildren}
-        >
-          <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight"
-            style={{ textShadow: '0 0 40px rgba(255, 255, 255, 0.1)' }}
-            variants={fadeInUp}
-          >
-            AI tools that actually save you time
-          </motion.h1>
+      {/* Smooth Scroll */}
+      {!isLoading && <SmoothScroll />}
 
-          <motion.p
-            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
-            style={{ color: 'rgb(148, 163, 184)' }}
-            variants={fadeInUp}
-          >
-            Digital products built by AI, reviewed by humans
-          </motion.p>
+      <div className="flex flex-col bg-[#0A0E27]">
+        <GrainTexture />
 
-          <motion.div
-            className="flex gap-4 justify-center flex-wrap"
-            variants={fadeInUp}
-          >
-            <Link
-              href="/products"
-              className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 overflow-hidden"
-              style={{
-                boxShadow: '0 0 30px rgba(59, 130, 246, 0.3)',
-              }}
-            >
-              <span className="relative z-10">Browse Products</span>
-              <div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  boxShadow: '0 0 40px rgba(139, 92, 246, 0.4)',
-                }}
-              />
-            </Link>
-
-            <Link
-              href="/free-tools"
-              className="px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:border-white"
-              style={{
-                border: '2px solid rgb(71, 85, 105)',
-                color: 'white',
-              }}
-            >
-              Try Free Tools
-            </Link>
-          </motion.div>
-        </motion.div>
-      </section>
+        {/* 3D Hero Section */}
+        {!isLoading && <Hero3D />}
 
       {/* Social Proof Bar */}
       <SocialProofBar />
 
       {/* Featured Products */}
       <motion.section
+        id="products"
         className="py-20 px-4 relative"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -131,8 +65,6 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* 3D Product Demo */}
-      <ProductDemo3D />
 
       {/* Categories */}
       <motion.section
@@ -261,5 +193,6 @@ export default function HomePage() {
         </div>
       </motion.section>
     </div>
+    </>
   );
 }
