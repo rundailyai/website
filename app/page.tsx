@@ -19,6 +19,13 @@ import { Cursor } from "./components/ui/Cursor";
 import { SmoothScroll } from "./components/SmoothScroll";
 import { ScrollAnimations } from "./components/animations/ScrollAnimations";
 import { ScrollProgress } from "./components/ui/ScrollProgress";
+import { getFeaturedProducts } from "./lib/products";
+
+// Lazy load 3D Product Showcase
+const ProductShowcase3D = dynamic(
+  () => import('./components/3d/ProductShowcase3D').then(mod => ({ default: mod.ProductShowcase3D })),
+  { ssr: false, loading: () => <div className="h-[600px] animate-pulse bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-2xl" /> }
+);
 
 
 
@@ -51,7 +58,7 @@ export default function HomePage() {
       {/* Social Proof Bar */}
       <SocialProofBar />
 
-      {/* Featured Products */}
+      {/* Featured Products - 3D Showcase */}
       <section
         id="products"
         className="py-20 px-4 relative scroll-animate"
@@ -60,7 +67,14 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent scroll-heading">
             Featured Products
           </h2>
-          <div className="scroll-stagger">
+
+          {/* 3D Showcase on desktop, fallback to cards on mobile */}
+          <div className="hidden md:block">
+            {!isLoading && <ProductShowcase3D products={getFeaturedProducts()} />}
+          </div>
+
+          {/* Mobile fallback */}
+          <div className="block md:hidden scroll-stagger">
             <FeaturedProducts />
           </div>
         </div>
